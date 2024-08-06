@@ -5,7 +5,7 @@ import { FaSearch } from 'react-icons/fa';
 
 interface UserListProps {
   users: User[];
-  onUserSelect: (userId: number) => void;
+  onUserSelect: (userId: string) => void;
 }
 
 const UserList: React.FC<UserListProps> = ({ users, onUserSelect }) => {

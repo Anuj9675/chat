@@ -7,7 +7,7 @@ interface MessageComponentProps {
   message: Message;
   isOwnMessage: boolean;
   onReply: (message: Message) => void;
-  onDelete: (id: number) => void;
+  onDelete: (id: string) => void;
   onCopy: (text: string) => void;
 }
 

@@ -38,7 +38,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ selectedUser, onClose }) 
   const handleSendMessage = (text: string) => {
     if (loggedInUser) {
       const newMessage: Message = {
-        id: number(messages.length + 1),
+        id: String(messages.length + 1),
         text: replyMessage ? `Replying to: ${replyMessage.text}\n${text}` : text,
         sender: loggedInUser.name,
         timestamp: new Date().toISOString(),
@@ -57,7 +57,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ selectedUser, onClose }) 
     setReplyMessage(message);
   };
 
-  const handleDelete = (id: number) => {
+  const handleDelete = (id: string) => {
     setMessages(prevMessages => prevMessages.filter(msg => msg.id !== id));
   };
 

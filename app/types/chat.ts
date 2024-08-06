@@ -5,12 +5,12 @@ export interface User {
 }
 
 export interface Message {
-  id: number;
+  id: string;
   text: string;
   receiver: string;
   sender: string;
   timestamp: string;
   senderProfilePic: string;
   emojis?: string[];
-  reactions?: { emoji: string; userId: number }[]; 
+  reactions?: { emoji: string; userId: string }[]; 
 }
