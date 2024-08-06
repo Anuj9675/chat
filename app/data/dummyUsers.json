@@ -1,26 +1,26 @@
 [
   {
-    "id": "1",
+    "id": 1,
     "name": "Alice Johnson",
     "profilePic": "https://randomuser.me/api/portraits/lego/1.jpg"
   },
   {
-    "id": "2",
+    "id": 2,
     "name": "Bob Smith",
     "profilePic": "https://randomuser.me/api/portraits/lego/2.jpg"
   },
   {
-    "id": "3",
+    "id": 3,
     "name": "Charlie Brown",
     "profilePic": "https://randomuser.me/api/portraits/lego/3.jpg"
   },
   {
-    "id": "4",
+    "id": 4,
     "name": "Diana Prince",
     "profilePic": "https://randomuser.me/api/portraits/lego/4.jpg"
   },
   {
-    "id": "5",
+    "id": 5,
     "name": "Eve Adams",
     "profilePic": "https://randomuser.me/api/portraits/lego/5.jpg"
   }

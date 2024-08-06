@@ -1,16 +1,16 @@
 export interface User {
-  id: string;
+  id: number;
   name: string;
   profilePic: string;
 }
 
 export interface Message {
-  id: string;
+  id: number;
   text: string;
   receiver: string;
   sender: string;
   timestamp: string;
   senderProfilePic: string;
   emojis?: string[];
-  reactions?: { emoji: string; userId: string }[]; // Add reactions property
+  reactions?: { emoji: string; userId: string }[]; 
 }

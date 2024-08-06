@@ -3,10 +3,10 @@ import React, { useState } from 'react';
 import UserList from './components/UserList';
 import ChatInterface from './components/ChatInterface';
 import dummyUsers from './data/dummyUsers.json';
-import dymmyMessages from './data/dymmyMessages.json'
+
 
 const HomePage: React.FC = () => {
-  const [selectedUserId, setSelectedUserId] = useState<string | null>(null);
+  const [selectedUserId, setSelectedUserId] = useState<number | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
 
   const selectedUser = dummyUsers.find(user => user.id === selectedUserId) || null;
