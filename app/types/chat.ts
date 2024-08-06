@@ -12,5 +12,5 @@ export interface Message {
   timestamp: string;
   senderProfilePic: string;
   emojis?: string[];
-  reactions?: { emoji: string; userId: string }[]; 
+  reactions?: { emoji: string; userId: number }[]; 
 }
