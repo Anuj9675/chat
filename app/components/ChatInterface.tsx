@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import ChatInput from './ChatInput';
 import MessageComponent from './Message';
 import { User, Message } from '../types/chat';
-import dummyMessages from '../data/dymmyMessages.json';
+import dummyMessages from '../data/dummyMessages.json';
 import ChatHeader from './ChatHeader';
 import DummyLogin from './DummyLogin';
 
@@ -10,6 +10,14 @@ interface ChatInterfaceProps {
   selectedUser: User | null;
   onClose: () => void;
 }
+
+// Assuming dummyMessages has the following type definition
+type DummyMessagesType = {
+  [key: string]: Message[];
+};
+
+// Cast dummyMessages to the appropriate type
+const messagesData: DummyMessagesType = dummyMessages as DummyMessagesType;
 
 const ChatInterface: React.FC<ChatInterfaceProps> = ({ selectedUser, onClose }) => {
   const [messages, setMessages] = useState<Message[]>([]);
@@ -19,7 +27,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ selectedUser, onClose }) 
 
   useEffect(() => {
     if (selectedUser) {
-      const userMessages = dummyMessages[selectedUser.id] || [];
+      const userMessages = messagesData[selectedUser.id] || [];
       if (Array.isArray(userMessages)) {
         setMessages(userMessages);
       } else {
@@ -47,7 +55,6 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ selectedUser, onClose }) 
       setMessages(prevMessages => [...prevMessages, newMessage]);
       setReplyMessage(null);
 
-      
       if (messageContainerRef.current) {
         messageContainerRef.current.scrollTop = messageContainerRef.current.scrollHeight;
       }
