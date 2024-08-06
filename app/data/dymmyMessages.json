@@ -1,0 +1,31 @@
+{
+  "1": [
+    {
+      "id": "1",
+      "text": "Hello! How are you?",
+      "sender": "Alice Johnson",
+      "timestamp": "2023-01-01T12:00:00Z"
+    },
+    {
+      "id": "2",
+      "text": "Hello?",
+      "sender": "Alice Johnson",
+      "timestamp": "2023-01-01T12:00:00Z"
+    }
+  ],
+  "2": [
+    {
+      "id": "1",
+      "text": "Hello! How are you?",
+      "sender": "Bob Smith",
+      "timestamp": "2023-01-01T12:00:00Z"
+    },
+    {
+      "id": "2",
+      "text": "Hello?",
+      "sender": "Bob Smith",
+      "timestamp": "2023-01-01T12:00:00Z"
+    }
+  ]
+}
+
