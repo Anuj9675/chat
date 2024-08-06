@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import ChatInput from './ChatInput';
 import MessageComponent from './Message';
 import { User, Message } from '../types/chat';
-import dummyMessages from '../data/dummyMessages.json';
+import dummyMessages from '../data/dymmyMessages.json';
 import ChatHeader from './ChatHeader';
 import DummyLogin from './DummyLogin';
 
