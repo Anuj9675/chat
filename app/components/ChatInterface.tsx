@@ -11,14 +11,6 @@ interface ChatInterfaceProps {
   onClose: () => void;
 }
 
-// Assuming dummyMessages has the following type definition
-type DummyMessagesType = {
-  [key: string]: Message[];
-};
-
-// Cast dummyMessages to the appropriate type
-const messagesData: DummyMessagesType = dummyMessages as DummyMessagesType;
-
 const ChatInterface: React.FC<ChatInterfaceProps> = ({ selectedUser, onClose }) => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [replyMessage, setReplyMessage] = useState<Message | null>(null);
@@ -27,7 +19,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ selectedUser, onClose }) 
 
   useEffect(() => {
     if (selectedUser) {
-      const userMessages = messagesData[selectedUser.id] || [];
+      const userMessages = dummyMessages[selectedUser.id] || [];
       if (Array.isArray(userMessages)) {
         setMessages(userMessages);
       } else {
