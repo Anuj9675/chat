@@ -9,9 +9,9 @@ export interface Message {
   text?: string;
   sender: string;
   timestamp: string;
-  file?: string;
-  fileName?: string;
-  fileType?: string;
+  file?: any;
+  fileName?: any;
+  fileType?: any;
   senderProfilePic?: string;
   emojis?: string[];
   reactions?: string[];
