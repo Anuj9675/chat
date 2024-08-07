@@ -81,7 +81,7 @@ const MessageComponent: React.FC<MessageComponentProps> = ({ message, isOwnMessa
               handleEmojiClick={handleEmojiClick}
               emojiMap={emojiMap}
               isOwnMessage={isOwnMessage}
-              messageText={message.text || ''}  // Pass the message text as a prop
+              messageText={message.text || ''}  
             />
           </div>
         )}
