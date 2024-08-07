@@ -20,7 +20,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ selectedUser, onClose }) 
   const messageContainerRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
 
-  // Cast dummyMessages to MessageMap
+  // Ensure dummyMessages is typed correctly
   const messagesMap: MessageMap = dummyMessages as MessageMap;
 
   useEffect(() => {

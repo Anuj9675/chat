@@ -1,20 +1,22 @@
 export interface User {
   id: string;
   name: string;
-  profilePic: string;
+  profilePic?: string;
 }
 
 export interface Message {
   id: string;
-  text: string;
-  receiver: string;
+  text?: string;
   sender: string;
   timestamp: string;
-  senderProfilePic: string;
+  file?: string;
+  fileName?: string;
+  fileType?: string;
+  senderProfilePic?: string;
   emojis?: string[];
-  reactions?: { emoji: string; userId: string }[]; 
+  reactions?: string[];
 }
 
-export type MessagesMap = {
+export type MessageMap = {
   [key: string]: Message[];
 };
