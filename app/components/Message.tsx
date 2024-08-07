@@ -3,7 +3,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Message } from '../types/chat';
 import { FaChevronDown } from 'react-icons/fa';
 import MessageFeature from './MessageFeature';
-import FileDisplay from './FileDisplay'; 
+import FileDisplay from './FileDisplay';
 
 interface MessageComponentProps {
   message: Message;
@@ -81,7 +81,7 @@ const MessageComponent: React.FC<MessageComponentProps> = ({ message, isOwnMessa
               handleEmojiClick={handleEmojiClick}
               emojiMap={emojiMap}
               isOwnMessage={isOwnMessage}
-              messageText={message.text || ''}  
+              messageText={message.text || ''}
             />
           </div>
         )}
