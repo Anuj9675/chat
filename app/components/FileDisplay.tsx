@@ -6,6 +6,9 @@ interface FileDisplayProps {
   fileUrl: any;
   fileName: any;
   fileType: any;
+  onReply: () => void;
+  onDelete: () => void;
+  onCopy: () => void;
 }
 
 const FileDisplay: React.FC<FileDisplayProps> = ({ fileUrl, fileName, fileType}) => {
