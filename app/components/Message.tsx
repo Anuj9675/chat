@@ -8,9 +8,9 @@ import FileDisplay from './FileDisplay';
 interface MessageComponentProps {
   message: Message;
   isOwnMessage: boolean;
-  onReply: (message: Message) => void;
-  onDelete: (id: string) => void;
-  onCopy: (text: string) => void;
+  onReply: (message: Message) => Promise<void>;
+  onDelete: (id: string) => Promise<void>;
+  onCopy: (text: string) => Promise<void>;
 }
 
 const MessageComponent: React.FC<MessageComponentProps> = ({ message, isOwnMessage, onReply, onDelete, onCopy }) => {
