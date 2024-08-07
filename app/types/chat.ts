@@ -1,6 +1,5 @@
 export interface User {
   id: number;
-  [key: string] : string | number
   name: string;
   profilePic: string;
 }
