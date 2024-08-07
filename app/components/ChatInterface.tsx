@@ -1,10 +1,9 @@
-// components/ChatInterface.tsx
 import { useRouter } from 'next/navigation';
 import React, { useState, useEffect, useRef } from 'react';
 import ChatInput from './ChatInput';
 import MessageComponent from './Message';
 import { User, Message } from '../types/chat';
-import dummyMessages from '../data/dymmyMessages.json';
+import dummyMessages from '../data/dymmyMessages.json'; 
 import ChatHeader from './ChatHeader';
 import DummyLogin from './DummyLogin';
 
@@ -22,7 +21,8 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ selectedUser, onClose }) 
 
   useEffect(() => {
     if (selectedUser) {
-      const userMessages = dummyMessages[selectedUser.id] || [];
+      // Ensure ID is a string for indexing
+      const userMessages = dummyMessages[selectedUser.id.toString()] || [];
       if (Array.isArray(userMessages)) {
         setMessages(userMessages);
       } else {
@@ -45,8 +45,10 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ selectedUser, onClose }) 
         text: replyMessage ? `Replying to: ${replyMessage.text}\n${text}` : text,
         sender: loggedInUser.name,
         timestamp: new Date().toISOString(),
-        senderProfilePic: '',
-        file: file ? URL.createObjectURL(file) : undefined, // Store the file URL if available
+        senderProfilePic: '', // Default or fetch profile picture
+        emojis: [], // Initialize with empty array if no emojis
+        reactions: [], // Initialize with empty array if no reactions
+        file: file ? URL.createObjectURL(file) : undefined,
         fileName: file?.name,
         fileType: file?.type,
       };
@@ -70,7 +72,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ selectedUser, onClose }) 
   const handleCopy = (text: string) => {
     navigator.clipboard.writeText(text).then(() => {
       console.log('Copied to clipboard');
-    }, (err) => {
+    }).catch(err => {
       console.error('Failed to copy:', err);
     });
   };
@@ -87,9 +89,9 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ selectedUser, onClose }) 
           <div>No messages available</div>
         ) : (
           <div className="flex flex-col space-y-2">
-            {messages.map((msg, index) => (
+            {messages.map((msg) => (
               <MessageComponent
-                key={index}
+                key={msg.id}
                 message={msg}
                 isOwnMessage={msg.sender === loggedInUser.name}
                 onReply={handleReply}
