@@ -3,8 +3,8 @@ import { useRouter } from 'next/navigation';
 import React, { useState, useEffect, useRef } from 'react';
 import ChatInput from './ChatInput';
 import MessageComponent from './Message';
-import { User, Message } from '../types/chat';
-import dummyMessages from '../data/dymmyMessages.json' as unknown as DummyMessages;e
+import { User, Message, MessageMap } from '../types/chat'; 
+import dummyMessages from '../data/dymmyMessages.json';
 import ChatHeader from './ChatHeader';
 import DummyLogin from './DummyLogin';
 
@@ -20,9 +20,12 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ selectedUser, onClose }) 
   const messageContainerRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
 
+  // Cast dummyMessages to MessageMap
+  const messagesMap: MessageMap = dummyMessages as MessageMap;
+
   useEffect(() => {
     if (selectedUser) {
-      const userMessages = dummyMessages[selectedUser.id.toString()] || []; 
+      const userMessages = messagesMap[selectedUser.id.toString()] || [];
       if (Array.isArray(userMessages)) {
         setMessages(userMessages);
       } else {
@@ -30,7 +33,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ selectedUser, onClose }) 
         setMessages([]);
       }
     }
-  }, [selectedUser]);
+  }, [selectedUser, messagesMap]);
 
   useEffect(() => {
     if (messageContainerRef.current) {

@@ -14,3 +14,7 @@ export interface Message {
   emojis?: string[];
   reactions?: { emoji: string; userId: string }[]; 
 }
+
+export type MessagesMap = {
+  [key: string]: Message[];
+};
