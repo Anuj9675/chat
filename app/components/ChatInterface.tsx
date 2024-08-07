@@ -9,14 +9,14 @@ import ChatHeader from './ChatHeader';
 import DummyLogin from './DummyLogin';
 
 interface ChatInterfaceProps {
-  selectedUser: User | null;
+  selectedUser: User | any;
   onClose: () => void;
 }
 
 const ChatInterface: React.FC<ChatInterfaceProps> = ({ selectedUser, onClose }) => {
   const [messages, setMessages] = useState<Message[]>([]);
-  const [replyMessage, setReplyMessage] = useState<Message | null>(null);
-  const [loggedInUser, setLoggedInUser] = useState<User | null>(null);
+  const [replyMessage, setReplyMessage] = useState<Message | any>(null);
+  const [loggedInUser, setLoggedInUser] = useState<User | any>(null);
   const messageContainerRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
 
