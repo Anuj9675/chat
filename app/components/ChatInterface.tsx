@@ -1,4 +1,4 @@
-'use client'
+// components/ChatInterface.tsx
 import { useRouter } from 'next/navigation';
 import React, { useState, useEffect, useRef } from 'react';
 import ChatInput from './ChatInput';
@@ -38,7 +38,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ selectedUser, onClose }) 
     }
   }, [messages]);
 
-  const handleSendMessage = (text: string) => {
+  const handleSendMessage = (text: string, file?: File) => {
     if (loggedInUser) {
       const newMessage: Message = {
         id: String(messages.length + 1),
@@ -46,6 +46,9 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ selectedUser, onClose }) 
         sender: loggedInUser.name,
         timestamp: new Date().toISOString(),
         senderProfilePic: '',
+        file: file ? URL.createObjectURL(file) : undefined, // Store the file URL if available
+        fileName: file?.name,
+        fileType: file?.type,
       };
       setMessages(prevMessages => [...prevMessages, newMessage]);
       setReplyMessage(null);

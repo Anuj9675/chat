@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import { FaCopy, FaReply, FaTrash } from 'react-icons/fa';
 
 interface MessageFeatureProps {

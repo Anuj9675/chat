@@ -11,6 +11,14 @@
       "text": "Hello?",
       "sender": "Alice Johnson",
       "timestamp": "2023-01-01T12:00:00Z"
+    },
+    {
+      "id": "3",
+      "file": "https://example.com/sample.pdf",
+      "fileName": "sample.pdf",
+      "fileType": "application/pdf",
+      "sender": "Alice Johnson",
+      "timestamp": "2023-01-01T13:00:00Z"
     }
   ],
   "2": [
@@ -25,7 +33,14 @@
       "text": "Hello?",
       "sender": "Bob Smith",
       "timestamp": "2023-01-01T12:00:00Z"
+    },
+    {
+      "id": "3",
+      "file": "https://example.com/sample.zip",
+      "fileName": "sample.zip",
+      "fileType": "application/zip",
+      "sender": "Bob Smith",
+      "timestamp": "2023-01-01T13:00:00Z"
     }
   ]
 }
-
