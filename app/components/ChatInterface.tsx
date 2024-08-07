@@ -1,9 +1,10 @@
+'use client'
 import { useRouter } from 'next/navigation';
 import React, { useState, useEffect, useRef } from 'react';
 import ChatInput from './ChatInput';
 import MessageComponent from './Message';
 import { User, Message } from '../types/chat';
-import dummyMessages from '../data/dymmyMessages.json'; 
+import dummyMessages from '../data/dymmyMessages.json' as unknown as DummyMessages;e
 import ChatHeader from './ChatHeader';
 import DummyLogin from './DummyLogin';
 
@@ -21,8 +22,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ selectedUser, onClose }) 
 
   useEffect(() => {
     if (selectedUser) {
-      // Ensure ID is a string for indexing
-      const userMessages = dummyMessages[selectedUser.id.toString()] || [];
+      const userMessages = dummyMessages[selectedUser.id.toString()] || []; 
       if (Array.isArray(userMessages)) {
         setMessages(userMessages);
       } else {
@@ -45,9 +45,9 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ selectedUser, onClose }) 
         text: replyMessage ? `Replying to: ${replyMessage.text}\n${text}` : text,
         sender: loggedInUser.name,
         timestamp: new Date().toISOString(),
-        senderProfilePic: '', // Default or fetch profile picture
-        emojis: [], // Initialize with empty array if no emojis
-        reactions: [], // Initialize with empty array if no reactions
+        senderProfilePic: '', 
+        emojis: [], 
+        reactions: [], 
         file: file ? URL.createObjectURL(file) : undefined,
         fileName: file?.name,
         fileType: file?.type,
