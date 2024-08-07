@@ -15,8 +15,8 @@ interface ChatInterfaceProps {
 
 const ChatInterface: React.FC<ChatInterfaceProps> = ({ selectedUser, onClose }) => {
   const [messages, setMessages] = useState<Message[]>([]);
-  const [replyMessage, setReplyMessage] = useState<Message | null>(null);
-  const [loggedInUser, setLoggedInUser] = useState<User | null>(null);
+  const [replyMessage, setReplyMessage] = useState<Message | any>();
+  const [loggedInUser, setLoggedInUser] = useState<User | any>();
   const messageContainerRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
 
