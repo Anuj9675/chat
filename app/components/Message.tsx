@@ -8,7 +8,7 @@ import FileDisplay from './FileDisplay';
 interface MessageComponentProps {
   message: Message;
   isOwnMessage: boolean;
-  onReply: (message: string) => Promise<void>;
+  onReply: (message: Message) => Promise<void>;
   onDelete: (id: string) => Promise<void>;
   onCopy: (text: string) => Promise<void>;
 }
