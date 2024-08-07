@@ -1,4 +1,3 @@
-'use client'
 import React, { useState, useRef, useEffect } from 'react';
 import { Message } from '../types/chat';
 import { FaChevronDown } from 'react-icons/fa';
@@ -51,9 +50,6 @@ const MessageComponent: React.FC<MessageComponentProps> = ({ message, isOwnMessa
             fileUrl={message.file}
             fileName={message.fileName || 'Unknown File'}
             fileType={message.fileType || 'application/octet-stream'}
-            onReply={() => onReply(message)}
-            onDelete={() => onDelete(message.id)}
-            onCopy={() => onCopy(message.fileUrl || '')}  // Handle file messages
           />
         ) : (
           <>

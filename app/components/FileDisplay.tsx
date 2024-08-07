@@ -1,4 +1,3 @@
-// FileDisplay.tsx
 import React from 'react';
 import { FaFile, FaFilePdf, FaFileWord, FaFileArchive } from 'react-icons/fa';
 
@@ -6,12 +5,9 @@ interface FileDisplayProps {
   fileUrl: any;
   fileName: any;
   fileType: any;
-  onReply: () => void;
-  onDelete: () => void;
-  onCopy: () => void;
 }
 
-const FileDisplay: React.FC<FileDisplayProps> = ({ fileUrl, fileName, fileType}) => {
+const FileDisplay: React.FC<FileDisplayProps> = ({ fileUrl, fileName, fileType }) => {
   const getFileIcon = (fileType: string) => {
     if (fileType.includes('pdf')) return <FaFilePdf />;
     if (fileType.includes('word')) return <FaFileWord />;
