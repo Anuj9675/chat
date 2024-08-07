@@ -23,7 +23,7 @@ const DummyLogin: React.FC<DummyLoginProps> = ({ onLogin }) => {
         className="p-2 mb-4 border rounded"
         value={selectedUser?.id || ''}
         onChange={(e) => {
-          const user = dummyUsers.find((user) => user.id === e.target.value);
+          const user = dummyUsers.find((user) => user.id === parseInt(e.target.value));
           setSelectedUser(user || null);
         }}
       >

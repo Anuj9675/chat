@@ -1,42 +1,38 @@
 'use client'
-import React, { useState } from 'react';
+import Link from 'next/link';
 import { User } from '../types/chat';
-import { FaSearch } from 'react-icons/fa';
 
 interface UserListProps {
   users: User[];
-  onUserSelect: (userId: string) => void;
+  searchQuery: string;
+  onSearchChange: (query: string) => void;
 }
 
-const UserList: React.FC<UserListProps> = ({ users, onUserSelect }) => {
-  const [searchTerm, setSearchTerm] = useState('');
-
+const UserList: React.FC<UserListProps> = ({ users, searchQuery, onSearchChange }) => {
   const filteredUsers = users.filter(user =>
-    user.name.toLowerCase().includes(searchTerm.toLowerCase())
+    user.name?.toLowerCase().includes(searchQuery.toLowerCase()) || false
   );
 
   return (
-    <div className="w-full bg-gray-100 border-r overflow-y-auto h-screen">
-        <h1 className='font-bold text-xl mx-4 my-2 '>Chats</h1>
+    <div>
       <div className="p-4 flex items-center">
-        <FaSearch className="text-gray-400 mr-2" />
         <input
           type="text"
           placeholder="Search..."
           className="p-2 border rounded w-full"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
+          value={searchQuery}
+          onChange={(e) => onSearchChange(e.target.value)}
         />
       </div>
       {filteredUsers.map(user => (
-        <div
+        <Link
           key={user.id}
+          href={`/?userId=${user.id}`}
           className="flex items-center p-2 mb-2 cursor-pointer hover:bg-gray-200 border-b"
-          onClick={() => onUserSelect(user.id)}
         >
-          <img src={user.profilePic} alt={user.name} className="w-10 h-10 rounded-full mr-2" />
-          <div>{user.name}</div>
-        </div>
+          <img src={user.profilePic || '/default-profile-pic.png'} alt={user.name || 'User'} className="w-10 h-10 rounded-full mr-2" />
+          <div>{user.name || 'Unknown User'}</div>
+        </Link>
       ))}
     </div>
   );

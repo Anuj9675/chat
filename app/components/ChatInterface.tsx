@@ -1,3 +1,5 @@
+'use client'
+import { useRouter } from 'next/navigation';
 import React, { useState, useEffect, useRef } from 'react';
 import ChatInput from './ChatInput';
 import MessageComponent from './Message';
@@ -16,6 +18,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ selectedUser, onClose }) 
   const [replyMessage, setReplyMessage] = useState<Message | null>(null);
   const [loggedInUser, setLoggedInUser] = useState<User | null>(null);
   const messageContainerRef = useRef<HTMLDivElement>(null);
+  const router = useRouter();
 
   useEffect(() => {
     if (selectedUser) {
