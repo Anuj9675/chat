@@ -2,9 +2,9 @@ import React from 'react';
 import { FaFile, FaFilePdf, FaFileWord, FaFileArchive } from 'react-icons/fa';
 
 interface FileDisplayProps {
-  fileUrl: any;
-  fileName: any;
-  fileType: any;
+  fileUrl: string;
+  fileName: string; 
+  fileType: string; 
 }
 
 const FileDisplay: React.FC<FileDisplayProps> = ({ fileUrl, fileName, fileType }) => {

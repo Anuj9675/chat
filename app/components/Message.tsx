@@ -7,9 +7,9 @@ import FileDisplay from './FileDisplay';
 interface MessageComponentProps {
   message: Message;
   isOwnMessage: boolean;
-  onReply: (message: Message) => Promise<void>;
-  onDelete: (id: string) => Promise<void>;
-  onCopy: (text: string) => Promise<void>;
+  onReply: (message: Message) => void;
+  onDelete: (id: string) => void; 
+  onCopy: (text: string) => void; 
 }
 
 const MessageComponent: React.FC<MessageComponentProps> = ({ message, isOwnMessage, onReply, onDelete, onCopy }) => {
@@ -73,7 +73,7 @@ const MessageComponent: React.FC<MessageComponentProps> = ({ message, isOwnMessa
             <MessageFeature
               onReply={() => onReply(message)}
               onDelete={() => onDelete(message.id)}
-              onCopy={message.file ? () => onCopy(message.fileUrl || '') : () => onCopy(message.text || '')}
+              onCopy={message.file ? () => onCopy(message.file || '') : () => onCopy(message.text || '')}
               handleEmojiClick={handleEmojiClick}
               emojiMap={emojiMap}
               isOwnMessage={isOwnMessage}

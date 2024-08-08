@@ -4,11 +4,11 @@ import { FaCopy, FaReply, FaTrash } from 'react-icons/fa';
 interface MessageFeatureProps {
   onReply: () => void;
   onDelete: () => void;
-  onCopy: (text: string) => void; // Pass the text to copy as an argument
+  onCopy: () => void;
   handleEmojiClick: (emoji: string) => void;
   emojiMap: { [key: string]: string };
   isOwnMessage: boolean;
-  messageText: string; // Pass the message text as a prop
+  messageText: string;
 }
 
 const MessageFeature: React.FC<MessageFeatureProps> = ({
@@ -18,13 +18,13 @@ const MessageFeature: React.FC<MessageFeatureProps> = ({
   handleEmojiClick,
   emojiMap,
   isOwnMessage,
-  messageText, // Receive the message text as a prop
+  messageText,
 }) => {
   const [showAlert, setShowAlert] = useState(false);
   const alertTimeoutRef = useRef<number | null>(null);
 
   const handleCopyText = () => {
-    navigator.clipboard.writeText(messageText) // Use the actual message text
+    navigator.clipboard.writeText(messageText)
       .then(() => {
         setShowAlert(true);
         if (alertTimeoutRef.current) clearTimeout(alertTimeoutRef.current);
