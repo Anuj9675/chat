@@ -2,7 +2,7 @@
 'use client'
 import React from 'react';
 import { FaTimes } from 'react-icons/fa';
-import { User } from '../types/chat';
+import { User } from '../../types/chat';
 
 interface ChatHeaderProps {
   user: User;

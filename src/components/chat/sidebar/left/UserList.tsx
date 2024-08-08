@@ -1,6 +1,6 @@
 'use client'
 import Link from 'next/link';
-import { User } from '../types/chat';
+import { User } from '../../../../types/chat';
 
 interface UserListProps {
   users: User[];

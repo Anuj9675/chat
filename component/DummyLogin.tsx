@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react';
-import { User } from '../types/chat';
+import { User } from '../../types/chat';
 import dummyUsers from '../data/dummyUsers.json';
 
 interface DummyLoginProps {

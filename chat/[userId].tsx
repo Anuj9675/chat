@@ -2,7 +2,7 @@
 import { useRouter } from 'next/router';
 import ChatInterface from '../components/ChatInterface';
 import dummyUsers from '../data/dummyUsers.json';
-import { User } from '../types/chat';
+import { User } from '../../types/chat';
 
 const ChatPage = () => {
   const router = useRouter();

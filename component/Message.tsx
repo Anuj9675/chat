@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Message } from '../types/chat';
+import { Message } from '../../types/chat';
 import { FaChevronDown } from 'react-icons/fa';
 import MessageFeature from './MessageFeature';
 import FileDisplay from './FileDisplay';

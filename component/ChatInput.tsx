@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, KeyboardEvent } from 'react';
-import { User, Message } from '../types/chat';
+import { User, Message } from '../../types/chat';
 import { FaPaperclip, FaImage, FaVideo, FaFile, FaEllipsisH, FaTimes, FaPaperPlane } from 'react-icons/fa';
 
 interface ChatInputProps {
