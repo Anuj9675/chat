@@ -10,7 +10,7 @@ export const Search = forwardRef((props: SearchProps, ref: Ref<HTMLInputElement>
       <input
         type="text"
         placeholder="Search"
-        className="pl-[30px]  p-1 outline-none bg-gray-200 w-full h-[32px] rounded-xl"
+        className="pl-[36px] placeholder:text-[16px] text-[16px]  p-1 outline-none bg-gray-200 w-full h-[28px] rounded-md"
         ref={ref} 
         {...props}
       />
@@ -21,7 +21,7 @@ export const Search = forwardRef((props: SearchProps, ref: Ref<HTMLInputElement>
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className="size-5 text-gray-600"
+          className="size-[20px] text-gray-600"
         >
           <path
             strokeLinecap="round"

@@ -12,11 +12,11 @@ export const LeftBar = () => {
   return (
     <div className="select-none bg-gray-50 w-full h-full overflow-hidden border-r border-gray-200/70">
       <div className="w-full h-fit">
-        <div className="flex items-center justify-between py-4 px-4 w-full border-b border-gray-200/70 h-[50px]">
+        <div className="transition-all ease-in-out flex items-center justify-between py-4 pl-4 pr-3 w-full border-b border-gray-200/70 h-[60px]">
           {open ? (
             <Search onChange={(e) => setText(e.currentTarget.value)} value={text} />
           ) : (
-            <p className="text-[22px] text-gray-800 font-semibold">Messages</p>
+            <p className="text-[23px] text-gray-800 font-semibold">Chats</p>
           )}
           <div
             onClick={() => {

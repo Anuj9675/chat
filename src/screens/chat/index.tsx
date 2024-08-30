@@ -11,7 +11,7 @@ interface IChat {
 export const Chat = () => {
   return (
     <div className="bg-white flex flex-row items-start justify-center w-full h-full">
-      <div className="w-[460px] h-full ">
+      <div className="w-[550px] h-full ">
         <LeftBar />
       </div>
       <div className=" w-full h-full">
